@@ -157,7 +157,7 @@
 					<!-- Product 1 -->
 					<div class="col">
 						<div class="card border-0 rounded-3 shadow-sm h-100">
-							<img src="https://via.placeholder.com/300" class="card-img-top rounded-3" alt="Product 1"
+							<img src="https://partyreflections.com/wp-content/uploads/2020/01/party-reflections_Furniture.jpg" class="card-img-top rounded-3" alt="Product 1"
 								style="object-fit: cover; height: 180px;">
 							<div class="card-body d-flex flex-column justify-content-between p-3">
 								<div class="d-flex justify-content-between mb-2">
@@ -179,7 +179,7 @@
 					<!-- Product 2 -->
 					<div class="col">
 						<div class="card border-0 rounded-3 shadow-sm h-100">
-							<img src="https://via.placeholder.com/300" class="card-img-top rounded-3" alt="Product 2"
+							<img src="https://partyreflections.com/wp-content/uploads/2020/01/party-reflections_Furniture.jpg" class="card-img-top rounded-3" alt="Product 2"
 								style="object-fit: cover; height: 180px;">
 							<div class="card-body d-flex flex-column justify-content-between p-3">
 								<div class="d-flex justify-content-between mb-2">
@@ -201,7 +201,7 @@
 					<!-- Product 3 -->
 					<div class="col">
 						<div class="card border-0 rounded-3 shadow-sm h-100">
-							<img src="https://via.placeholder.com/300" class="card-img-top rounded-3" alt="Product 3"
+							<img src="https://partyreflections.com/wp-content/uploads/2020/01/party-reflections_Furniture.jpg" class="card-img-top rounded-3" alt="Product 3"
 								style="object-fit: cover; height: 180px;">
 							<div class="card-body d-flex flex-column justify-content-between p-3">
 								<div class="d-flex justify-content-between mb-2">
@@ -223,7 +223,7 @@
 					<!-- Product 4 -->
 					<div class="col">
 						<div class="card border-0 rounded-3 shadow-sm h-100">
-							<img src="https://via.placeholder.com/300" class="card-img-top rounded-3" alt="Product 4"
+							<img src="https://partyreflections.com/wp-content/uploads/2020/01/party-reflections_Furniture.jpg" class="card-img-top rounded-3" alt="Product 4"
 								style="object-fit: cover; height: 180px;">
 							<div class="card-body d-flex flex-column justify-content-between p-3">
 								<div class="d-flex justify-content-between mb-2">
