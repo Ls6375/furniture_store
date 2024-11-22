@@ -47,10 +47,10 @@
         <!-- Cart Item 1 -->
         <div class="cart-item row align-items-center">
           <div class="col-3">
-            <img src="https://via.placeholder.com/100" alt="Product 1">
+            <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202437/0006/open-box-mid-century-upholstered-dining-chair-wood-legs-m.jpg" alt="Product 1">
           </div>
           <div class="col-6">
-            <h5>Product 1</h5>
+            <h5>Chair</h5>
             <p>$25.00</p>
           </div>
           <div class="col-3">
@@ -69,10 +69,10 @@
         <!-- Cart Item 2 -->
         <div class="cart-item row align-items-center">
           <div class="col-3">
-            <img src="https://via.placeholder.com/100" alt="Product 2">
+            <img src="https://berre.ca/cdn/shop/products/bailey-dining-table-112477.jpg?v=1683054216&width=800" alt="Product 2">
           </div>
           <div class="col-6">
-            <h5>Product 2</h5>
+            <h5>Table</h5>
             <p>$45.00</p>
           </div>
           <div class="col-3">
@@ -91,10 +91,10 @@
         <!-- Cart Item 3 -->
         <div class="cart-item row align-items-center">
           <div class="col-3">
-            <img src="https://via.placeholder.com/100" alt="Product 3">
+            <img src="http://localhost/php/Group_project/images/soffa.jpg" alt="Product 3">
           </div>
           <div class="col-6">
-            <h5>Product 3</h5>
+            <h5>Soffa</h5>
             <p>$35.00</p>
           </div>
           <div class="col-3">
