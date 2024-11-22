@@ -1,7 +1,7 @@
 <!-- navbar.php -->
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="#">Furniture Store</a>
+    <a class="navbar-brand" href="./">Furniture Store</a>
     <button
       class="navbar-toggler d-lg-none"
       type="button"
