@@ -19,61 +19,7 @@
 
 <body>
 	<!-- Navbar -->
-	<nav class="navbar navbar-expand-sm navbar-light bg-light">
-		<div class="container">
-			<a class="navbar-brand" href="#">Furniture Store</a>
-			<button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-				data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="collapsibleNavId">
-				<ul class="navbar-nav me-auto mt-2 mt-lg-0">
-					<li class="nav-item">
-						<a class="nav-link active" href="#">Home <span class="visually-hidden">(current)</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Shop</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">Categories</a>
-						<div class="dropdown-menu" aria-labelledby="dropdownId">
-							<a class="dropdown-item" href="#">Chairs</a>
-							<a class="dropdown-item" href="#">Tables</a>
-							<a class="dropdown-item" href="#">Sofas</a>
-						</div>
-					</li>
-				</ul>
-				<form class="d-flex my-2 my-lg-0">
-					<div class="input-group">
-						<input class="form-control me-sm-2" type="text" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-secondary" type="submit">
-							<i class="fas fa-search"></i>
-						</button>
-					</div>
-				</form>
-				<ul class="navbar-nav ms-auto">
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="userDropdown" data-bs-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false">
-							<i class="fas fa-user"></i> Account
-						</a>
-						<div class="dropdown-menu" aria-labelledby="userDropdown">
-							<a class="dropdown-item" href="#">Sign In</a>
-							<a class="dropdown-item" href="#">Sign Up</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-							<i class="fas fa-shopping-cart"></i> Cart
-							<span class="badge bg-danger">3</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+	<?php include 'partials/navbar.php'; ?>
 
 	<!-- Login Page Section -->
 	<div class="d-flex justify-content-center align-items-center mb-5">
@@ -184,41 +130,7 @@
 	</div>
 
 		<!-- Footer Section -->
-		<footer class="bg-dark text-white pt-5 pb-4">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3">
-						<h5>About Us</h5>
-						<p>We offer a wide range of high-quality furniture for every home and office. Our products are designed for
-							comfort and style.</p>
-					</div>
-					<div class="col-md-3">
-						<h5>Customer Service</h5>
-						<ul class="list-unstyled">
-							<li><a href="#" class="text-white">Contact Us</a></li>
-							<li><a href="#" class="text-white">Returns</a></li>
-							<li><a href="#" class="text-white">FAQ</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<h5>Follow Us</h5>
-						<ul class="list-unstyled">
-							<li><a href="#" class="text-white"><i class="fab fa-facebook"></i> Facebook</a></li>
-							<li><a href="#" class="text-white"><i class="fab fa-twitter"></i> Twitter</a></li>
-							<li><a href="#" class="text-white"><i class="fab fa-instagram"></i> Instagram</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<h5>Payment Methods</h5>
-						<ul class="list-unstyled">
-							<li><i class="fab fa-visa"></i> Visa</li>
-							<li><i class="fab fa-mastercard"></i> MasterCard</li>
-							<li><i class="fab fa-paypal"></i> PayPal</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</footer>
+		<?php include 'partials/footer.php'; ?>
 
 	<!-- Bootstrap 5 JavaScript -->
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

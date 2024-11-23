@@ -19,7 +19,7 @@
           <a class="nav-link active" href="./index.php" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Shop</a>
+          <a class="nav-link" href="./shop.php">Shop</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
@@ -44,12 +44,12 @@
             <i class="fas fa-user"></i> Account
           </a>
           <div class="dropdown-menu" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#">Sign In</a>
+            <a class="dropdown-item" href="./login.php">Sign In</a>
             <a class="dropdown-item" href="#">Sign Up</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="./cart.php">
             <i class="fas fa-shopping-cart"></i> Cart
             <span class="badge bg-danger">3</span>
           </a>

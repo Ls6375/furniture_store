@@ -19,74 +19,7 @@
 
 <body>
 	<!-- Navbar -->
-	<nav class="navbar navbar-expand-sm navbar-light bg-light">
-		<div class="container">
-			<a class="navbar-brand" href="#">Furniture Store</a>
-			<button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-				data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="collapsibleNavId">
-				<ul class="navbar-nav me-auto mt-2 mt-lg-0">
-					<!-- Home Link -->
-					<li class="nav-item">
-						<a class="nav-link active" href="#" aria-current="page">Home <span
-								class="visually-hidden">(current)</span></a>
-					</li>
-					<!-- Shop Link -->
-					<li class="nav-item">
-						<a class="nav-link" href="#">Shop</a>
-					</li>
-					<!-- Categories Dropdown -->
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">Categories</a>
-						<div class="dropdown-menu" aria-labelledby="dropdownId">
-							<a class="dropdown-item" href="#">Chairs</a>
-							<a class="dropdown-item" href="#">Tables</a>
-							<a class="dropdown-item" href="#">Sofas</a>
-						</div>
-					</li>
-				</ul>
-
-				<!-- Search Bar with Icon -->
-				<form class="d-flex my-2 my-lg-0">
-					<!-- Search Input and Button Group -->
-					<div class="input-group">
-						<input class="form-control me-sm-2" type="text" placeholder="Search" aria-label="Search">
-						<!-- Search Icon Button -->
-						<button class="btn btn-outline-secondary" type="submit">
-							<i class="fas fa-search"></i>
-						</button>
-					</div>
-				</form>
-
-				<!-- User and Cart Icons -->
-				<ul class="navbar-nav ms-auto">
-					<!-- User Account Dropdown -->
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="userDropdown" data-bs-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false">
-							<i class="fas fa-user"></i> Account
-						</a>
-						<div class="dropdown-menu" aria-labelledby="userDropdown">
-							<a class="dropdown-item" href="#">Sign In</a>
-							<a class="dropdown-item" href="#">Sign Up</a>
-						</div>
-					</li>
-
-					<!-- Cart Icon -->
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-							<i class="fas fa-shopping-cart"></i> Cart
-							<span class="badge bg-danger">3</span> <!-- Example badge for 3 items -->
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+	<?php include 'partials/navbar.php'; ?>
 
 	<!-- Shop Section with Heading and Paragraph -->
 	<div class="container mt-5 text-left">
@@ -171,7 +104,7 @@
 									</p>
 								</div>
 								<p class="card-text text-dark fs-5 mb-3">$25.00</p>
-								<button class="btn btn-dark w-100 py-2 rounded-3">Add to Cart</button>
+								<a  href="./cart.php" class="btn btn-dark w-100 py-2 rounded-3">Add to Cart</a>
 							</div>
 						</div>
 					</div>
@@ -193,7 +126,7 @@
 									</p>
 								</div>
 								<p class="card-text text-dark fs-5 mb-3">$45.00</p>
-								<button class="btn btn-dark w-100 py-2 rounded-3">Add to Cart</button>
+								<a href="./cart.php" class="btn btn-dark w-100 py-2 rounded-3">Add to Cart</a>
 							</div>
 						</div>
 					</div>
@@ -215,7 +148,7 @@
 									</p>
 								</div>
 								<p class="card-text text-dark fs-5 mb-3">$55.00</p>
-								<button class="btn btn-dark w-100 py-2 rounded-3">Add to Cart</button>
+								<a href="./cart.php" class="btn btn-dark w-100 py-2 rounded-3">Add to Cart</a>
 							</div>
 						</div>
 					</div>
@@ -237,7 +170,7 @@
 									</p>
 								</div>
 								<p class="card-text text-dark fs-5 mb-3">$35.00</p>
-								<button class="btn btn-dark w-100 py-2 rounded-3">Add to Cart</button>
+								<a href="./cart.php" class="btn btn-dark w-100 py-2 rounded-3">Add to Cart</a>
 							</div>
 						</div>
 					</div>
@@ -271,58 +204,7 @@
 
 
 	<!-- Footer Section -->
-	<footer class="bg-dark text-white pt-5 pb-4">
-		<div class="container">
-			<div class="row">
-				<!-- About Us Section -->
-				<div class="col-md-3">
-					<h5>About Us</h5>
-					<p>We offer a wide range of high-quality furniture for every home and office. Our products are designed
-						for
-						comfort and style.</p>
-				</div>
-
-				<!-- Quick Links Section -->
-				<div class="col-md-3">
-					<h5>Quick Links</h5>
-					<ul class="list-unstyled">
-						<li><a href="#" class="text-white text-decoration-none">Home</a></li>
-						<li><a href="#" class="text-white text-decoration-none">Shop</a></li>
-						<li><a href="#" class="text-white text-decoration-none">Contact</a></li>
-						<li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
-					</ul>
-				</div>
-
-				<!-- Contact Section -->
-				<div class="col-md-3">
-					<h5>Contact</h5>
-					<p>123 Furniture St., New York, NY</p>
-					<p>Email: support@furniturestore.com</p>
-					<p>Phone: (123) 456-7890</p>
-				</div>
-
-				<!-- Social Media Section -->
-				<div class="col-md-3">
-					<h5>Follow Us</h5>
-					<ul class="list-unstyled">
-						<li><a href="#" class="text-white text-decoration-none"><i class="fab fa-facebook-f"></i> Facebook</a>
-						</li>
-						<li><a href="#" class="text-white text-decoration-none"><i class="fab fa-twitter"></i> Twitter</a></li>
-						<li><a href="#" class="text-white text-decoration-none"><i class="fab fa-instagram"></i> Instagram</a>
-						</li>
-						<li><a href="#" class="text-white text-decoration-none"><i class="fab fa-youtube"></i> YouTube</a></li>
-					</ul>
-				</div>
-			</div>
-
-			<!-- Footer Bottom -->
-			<div class="row mt-4">
-				<div class="col-12 text-center">
-					<p class="mb-0">© 2024 Furniture Store. All rights reserved.</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<?php include 'partials/footer.php'; ?>
 
 	<!-- Font Awesome for Icons -->
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
