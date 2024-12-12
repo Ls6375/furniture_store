@@ -1,1 +1,1 @@
-Database connection error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+Database connection error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused itDatabase connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)Database connection error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
