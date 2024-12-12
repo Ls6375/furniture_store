@@ -47,14 +47,28 @@ class Product
 	// In Product model
 	public function getProductBySlug($slug)
 	{
-		$sql = "SELECT * FROM products WHERE slug = :slug LIMIT 1";
-		$stmt = $this->pdo->prepare($sql);
-		$stmt->bindParam(':slug', $slug);
-		$stmt->execute();
-
-		return $stmt->fetch(\PDO::FETCH_ASSOC);
+			// First, get the product details using the provided slug
+			$sql = "SELECT * FROM products WHERE slug = :slug LIMIT 1";
+			$stmt = $this->pdo->prepare($sql);
+			$stmt->bindParam(':slug', $slug);
+			$stmt->execute();
+	
+			// Fetch the product data
+			$product = $stmt->fetch(\PDO::FETCH_ASSOC);
+	
+			// If the product is found, get its related images from product_images table
+			if ($product) {
+					$sqlImages = "SELECT * FROM product_images WHERE product_id = :product_id";
+					$stmtImages = $this->pdo->prepare($sqlImages);
+					$stmtImages->bindParam(':product_id', $product['id']);
+					$stmtImages->execute();
+	
+					// Fetch all related images as an array
+					$product['images'] = $stmtImages->fetchAll(\PDO::FETCH_ASSOC);
+			}
+	
+			return $product;
 	}
-
 
 
 	// Get all products

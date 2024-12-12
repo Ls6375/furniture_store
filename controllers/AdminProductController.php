@@ -124,7 +124,7 @@ class AdminProductController extends BaseController
 					$fileName = $fileArray['name'][$index];
 					$targetFile = $targetDir . basename($fileName);
 					if (move_uploaded_file($tmpName, $targetFile)) {
-							$uploadedImages[] = $targetFile;
+							$uploadedImages[] = basename($fileName);
 					} else {
 					}
 			}

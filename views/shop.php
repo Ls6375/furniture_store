@@ -80,7 +80,7 @@ ob_start();
             <!-- Product Listings -->
             <div class="col-md-9">
                 <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <?php foreach ($filteredProducts as $product): ?>
+                    <?php foreach ($products as $product): ?>
                         <div class="col">
                             <div class="card border-0 rounded-3 shadow-sm h-100">
                                 <img src="<?= assets('uploads/' . $product['mainImage']	) ?>" class="card-img-top rounded-3" alt="<?= $product['name']; ?>" style="object-fit: cover; height: 180px;">
