@@ -1,0 +1,12 @@
+# Tell Apache to serve public/index.php as the default index file
+DirectoryIndex public/index.php
+
+RewriteEngine On
+RewriteBase /php/Group_project/
+
+# If the request is for a real file or directory, do not rewrite
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect all requests to public/index.php
+RewriteRule ^(.*)$ public/index.php?path=$1 [QSA,L]

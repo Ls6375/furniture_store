@@ -1,0 +1,24 @@
+.cart-item {
+	border-bottom: 1px solid #ddd;
+	padding: 15px 0;
+}
+.cart-item img {
+	max-width: 100px;
+	object-fit: cover;
+}
+.remove-item {
+	cursor: pointer;
+	color: red;
+}
+.cart-summary {
+	border-radius: 5px;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.quantity-control button {
+	width: 40px;
+}
+.btn-outline-dark {
+	border-color: #ddd;
+}
