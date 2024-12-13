@@ -15,18 +15,10 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavId">
 			<ul class="navbar-nav me-auto mt-2 mt-lg-0">
 				<li class="nav-item">
-					<a class="nav-link active" href="./index" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+					<a class="nav-link active" href="<?= route('index') ?>" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="./shop">Shop</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownId">
-						<a class="dropdown-item" href="#">Chairs</a>
-						<a class="dropdown-item" href="#">Tables</a>
-						<a class="dropdown-item" href="#">Sofas</a>
-					</div>
 				</li>
 			</ul>
 			<form class="d-flex my-2 my-lg-0">
@@ -46,19 +38,18 @@
 					<div class="dropdown-menu" aria-labelledby="userDropdown">
 						<?php if (isLoggedIn()): ?>
 							<!-- Show if logged in -->
-							<a class="dropdown-item" href="./profile">Profile</a>
-							<a class="dropdown-item" href="./logout">Logout</a>
+							<a class="dropdown-item" href="<?= route('profile') ?>">Profile</a>
+							<a class="dropdown-item" href="<?= route('logout') ?>">Logout</a>
 						<?php else: ?>
 							<!-- Show if not logged in -->
-							<a class="dropdown-item" href="./signin">Login</a>
-							<a class="dropdown-item" href="./signup">Signup</a>
+							<a class="dropdown-item" href="<?= route('signin') ?>"></a>
+							<a class="dropdown-item" href="<?= route('signup') ?>">Signup</a>
 						<?php endif; ?>
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./cart">
+					<a class="nav-link" href="<?= route('cart') ?>">
 						<i class="fas fa-shopping-cart"></i> Cart
-						<span class="badge bg-danger">3</span>
 					</a>
 				</li>
 			</ul>

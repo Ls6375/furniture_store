@@ -11,3 +11,8 @@ function getUsername()
 {
 	return isLoggedIn() ? $_SESSION['user_email'] : null;
 }
+
+function getUserId()
+{
+	return isLoggedIn() ? $_SESSION['user_id'] : null;
+}

@@ -9,12 +9,14 @@ require_once __DIR__ . '/../utils/helpers.php';
 require_once __DIR__ . '/autoload.php';
 
 use App\Middleware\AdminAuthMiddleware;
+use App\Middleware\UserAuthMiddleware;
 use App\Router;
 use App\Utils\Auth;
 use Controllers\AdminAuthController;
 use Controllers\AdminCategoryController;
 use Controllers\AdminProductController;
 use Controllers\AuthController;
+use Controllers\CartController;
 use Controllers\ShopController;
 
 // Create the router instance
@@ -28,7 +30,15 @@ $router->get('index', [ShopController::class, 'showHome']);
 $router->get('shop', [ShopController::class, 'showShop']);
 $router->get('cart', [ShopController::class, 'showCart']);
 $router->get('product_detail/{product_slug}', [ShopController::class, 'showProductDetail']);
+$router->get('checkout', [ShopController::class, 'checkout'], [UserAuthMiddleware::class]);
+$router->post('checkout', [ShopController::class, 'completeOrder'], [UserAuthMiddleware::class]);
+$router->get('orders', [ShopController::class, 'showOrders'], [UserAuthMiddleware::class]);
 
+$router->post('cart/add', [CartController::class, 'addToCart']);
+$router->post('cart/update', [CartController::class, 'updateCart']);
+$router->post('cart/remove', [CartController::class, 'removeFromCart']);
+$router->get('cart/items', [CartController::class, 'getCart']);
+$router->get('cart/total', [CartController::class, 'getCartTotal']); // Add this line
 
 // Authentication routes
 $router->get('signup', [AuthController::class, 'showSignup']);

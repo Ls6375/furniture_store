@@ -9,6 +9,7 @@ class BaseController
     {
         $this->flashMessages['success'] = getFlash('success');
         $this->flashMessages['errors'] = getFlash('errors');
+        $this->flashMessages['old'] = getFlash('old');
     }
 
     protected function render($viewPath, $data = [])
