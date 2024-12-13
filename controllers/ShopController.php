@@ -71,20 +71,27 @@ class ShopController extends BaseController
 			$cartData = [];
 
 			foreach ($cartItems as $productId => $cartItem) {
-				// Fetch product details by ID
-				$productData = $this->productModel->getProductById($productId);
-
-				if ($productData) {
-					// Merge product data with cart item data (like quantity)
-					$cartData[] = [
-						'id' => $productData['id'],
-						'name' => $productData['name'],
-						'price' => $productData['price'],
-						'quantity' => $cartItem['quantity'],
-						'totalPrice' => $productData['price'] * $cartItem['quantity'],
-						'mainImage' => $productData['mainImage'] ?? 'default.jpg' // Fallback to default image
-					];
-				}
+				// Ensure $cartItem is an array before accessing its elements
+                if (is_array($cartItem) && isset($cartItem['quantity'])) {
+                    // Fetch product details by ID
+                    $productData = $this->productModel->getProductById($productId);
+    
+                    if ($productData) {
+                        // Merge product data with cart item data (like quantity)
+                        $cartData[] = [
+                            'id' => $productData['id'],
+                            'name' => $productData['name'],
+                            'price' => $productData['price'],
+                            'quantity' => $cartItem['quantity'],
+                            'totalPrice' => $productData['price'] * $cartItem['quantity'],
+                            'mainImage' => $productData['mainImage'] ?? 'default.jpg' // Fallback to default image
+                        ];
+                    }
+                } else {
+                    // Handle the case where $cartItem is not an array
+                    // You might want to log this or set an error message
+                    error_log("Cart item for product ID $productId is not an array: " . print_r($cartItem, true));
+                }
 			}
 		} else {
 			$cartData = []; // No items in the cart

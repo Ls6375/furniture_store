@@ -30,9 +30,10 @@ class CartController
 		// Load product data from the database
 		$product = $this->productModel->getProductById($productId);
 
-		if (!$product) {
+		// Check if $product is an array and contains the expected keys
+		if (!is_array($product) || !isset($product['name'], $product['price'])) {
 			// Set flash error message and redirect back
-			setFlash('errors',   ['error' => 'Product not found.']);
+			setFlash('errors', ['error' => 'Product data is invalid.']);
 			header('Location: ' . route('shop'));
 			exit;
 		}
