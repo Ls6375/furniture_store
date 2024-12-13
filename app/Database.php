@@ -10,7 +10,7 @@ class Database
     private $host = 'localhost';
     private $dbname = 'furniture_store';
     private $username = 'root';
-    private $password = '';
+    private $password = 'Ajit@1997';
     public $pdo;
 
     public function __construct() 
