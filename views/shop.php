@@ -21,6 +21,8 @@ $maxPrice = max(array_map(function($product) {
 $priceFilter = isset($_GET['price']) ? $_GET['price'] : $maxPrice;  // Default to 500 if no filter
 
 
+
+
 // Filter products based on selected filters
 $filteredProducts = array_filter($products, function ($product) use ($categoryFilter, $priceFilter) {
 	// Ensure category comparison is type-safe
@@ -32,6 +34,8 @@ $filteredProducts = array_filter($products, function ($product) use ($categoryFi
 			return false;
 	}
 	return true;
+
+	
 });
 
 
