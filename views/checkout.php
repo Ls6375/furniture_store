@@ -49,8 +49,11 @@ ob_start();
 				<div class="mb-4">
 					<h4>Billing Information</h4>
 					<div class="row">
+
 						<div class="col-md-6 mb-3">
+
 							<label for="firstName" class="form-label">Name</label>
+							
 							<input type="text" class="form-control <?= isset($errors['firstName']) ? 'is-invalid' : '' ?>" id="firstName" name="firstName" value="<?= htmlspecialchars($old['firstName'] ?? '') ?>">
 							<?php if (isset($errors['firstName'])): ?>
 								<div class="invalid-feedback"><?= $errors['firstName'] ?></div>
