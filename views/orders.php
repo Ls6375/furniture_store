@@ -45,7 +45,7 @@ ob_start();
                         <th>Order ID</th>
                         <th>Date</th>
                         <th>Status</th>
-                        <th>Total</th>
+                        <th>Address</th>
                         <th>Details</th>
                     </tr>
                 </thead>
@@ -55,7 +55,7 @@ ob_start();
                             <td><?= htmlspecialchars($order['order_id']) ?></td>
                             <td><?= htmlspecialchars($order['created_at']) ?></td>
                             <td><?= htmlspecialchars($order['order_status']) ?></td>
-                            <td>$<?= number_format($order['total'], 2) ?></td>
+                            <td><?= htmlspecialchars($order['address'], 2) ?></td>
                             <td>
                                 <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#orderDetails<?= $order['order_id'] ?>" aria-expanded="false" aria-controls="orderDetails<?= $order['order_id'] ?>">
                                     View Details
@@ -67,16 +67,36 @@ ob_start();
                                 <div class="card card-body">
                                     <h5>Order Items</h5>
                                     <ul class="list-group">
-                                        <?php foreach ($order['items'] as $item) : ?>
-                                            <li class="list-group-item">
-                                                <?= htmlspecialchars($item['product_name']) ?> - <?= htmlspecialchars($item['quantity']) ?> x $<?= number_format($item['price'], 2) ?>
-                                            </li>
+                                    <li class="list-group-item">
+                    <strong>First Name:</strong> <?= htmlspecialchars($order['firstName']) ?>
+                </li>
+                <li class="list-group-item">
+                    <strong>Email:</strong> <?= htmlspecialchars($order['email']) ?>
+                </li>
+                <li class="list-group-item">
+                    <strong>Phone:</strong> <?= htmlspecialchars($order['phone']) ?>
+                </li>
+                <li class="list-group-item">
+                    <strong>City:</strong> <?= htmlspecialchars($order['city']) ?>
+                </li>
+                <li class="list-group-item">
+                    <strong>State:</strong> <?= htmlspecialchars($order['state']) ?>
+                </li>
+                <li class="list-group-item">
+                    <strong>Zip Code:</strong> <?= htmlspecialchars($order['zipCode']) ?>
+                </li>
+                <li class="list-group-item">
+                    <strong>Card Name:</strong> <?= htmlspecialchars($order['cardName']) ?>
+                </li>
+                <li class="list-group-item">
+                    <strong>Card Number:</strong> <?= htmlspecialchars($order['cardNumber']) ?>
+                </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
                             </td>
                         </tr>
-                    <?php endforeach; ?>
+                    
                 </tbody>
             </table>
         </div>

@@ -14,6 +14,17 @@ class Order
         $this->pdo = (new Database())->pdo;
     }
 
+    public function getAllOrders()
+    {
+        // Prepare the SQL query to fetch all orders
+        $query = "SELECT * FROM orders";
+        $stmt = $this->pdo->prepare($query);  // Use $this->pdo here, not $this->db
+        $stmt->execute();
+
+        // Fetch all orders and return as an associative array
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     // Method to create a new order
     public function createOrder($userId, $firstName, $email, $phone, $address, $city, $state, $zipCode, $cardName, $cardNumber, $expiration, $cvv)
     {

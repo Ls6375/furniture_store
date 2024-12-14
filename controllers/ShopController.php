@@ -48,17 +48,59 @@ class ShopController extends BaseController
 
 
 	public function showOrders()
-	{
-		// Get categories and products
-		$categories = $this->productCategories->getAllCategories();
-		$products = $this->productModel->getAllProducts();
+{
+    // Get categories and products
+    $categories = $this->productCategories->getAllCategories();
+    $products = $this->productModel->getAllProducts();
 
-		// Pass them to the view
-		$this->render('../views/orders.php', [
-			'categories' => $categories,
-			'products' => $products,
-		]);
-	}
+    // Fetch the orders
+    $orders = $this->userOrder->getAllOrders(); // This will now work
+
+    // Pass the data to the view
+    $this->render('../views/orders.php', [
+        'categories' => $categories,
+        'products' => $products,
+        'orders' => $orders,  // Add the orders here
+    ]);
+}
+
+
+
+public function getAllOrders()
+{
+    // SQL to fetch orders and join with order_items (assuming there is an order_items table)
+    $query = "SELECT o.*, oi.*, p.name AS product_name FROM orders o
+              LEFT JOIN order_items oi ON o.order_id = oi.order_id
+              LEFT JOIN products p ON oi.product_id = p.id";
+    
+    $stmt = $this->db->prepare($query);
+    $stmt->execute();
+
+    $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Organize orders and their items
+    $result = [];
+    foreach ($orders as $order) {
+        $orderId = $order['order_id'];
+        if (!isset($result[$orderId])) {
+            $result[$orderId] = $order;
+            $result[$orderId]['items'] = [];
+			$result[$orderId]['total'] = 0;
+        }
+        // Add items to the order
+        $result[$orderId]['items'][] = [
+            'product_name' => $order['product_name'],
+            'quantity' => $order['quantity'],
+            'price' => $order['price'],
+        ];
+		// Calculate the total for the order
+        $result[$orderId]['total'] += $order['quantity'] * $order['price'];
+    }
+
+    return array_values($result); // Return the array of orders with items
+}
+
+
 
 
 
@@ -119,9 +161,12 @@ class ShopController extends BaseController
 
 	public function checkout()
 	{
+		
 			$this->render('../views/checkout.php', [
 			'user' => $this->productUser->getUserByEmail($_SESSION['user_email']),
 			'totalPrice' => $this->getCartTotal()
+		
+
 		]);
 	}
 	public function completeOrder()
@@ -189,8 +234,13 @@ class ShopController extends BaseController
 	
 					// Add items to the cart
 					foreach ($cart as $item) {
-						$this->userOrder->addToCart($orderId, $item['product_id'], $item['quantity']);
+						if (isset($item['product_id'], $item['quantity'])) {
+							$this->userOrder->addToCart($orderId, $item['product_id'], $item['quantity']);
+						} else {
+							error_log("Cart item is missing 'product_id' or 'quantity': " . print_r($item, true));
+						}
 					}
+					
 	
 					// Update order status to 'processing'
 					$this->userOrder->updateOrderStatus($orderId, 'processing');
